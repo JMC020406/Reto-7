@@ -170,7 +170,7 @@ while dividendo>=2 and dividendo<=50:
 print("FIN")
 ```
 
-### Punto 8 / Listado de números primos
+### Punto 8 / Listado de números primos del 1 al 100
 ```py
 
 ```
