@@ -154,6 +154,7 @@ print("El factorial de "+str(num)+" es "+str(factorial))
 ```py
 
 ```
+no lo pude hacer
 
 ### Punto 7 / Divisores de un número del 2 al 50
 ```py
@@ -174,3 +175,4 @@ print("FIN")
 ```py
 
 ```
+no lo pude hacer
