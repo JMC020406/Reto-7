@@ -152,9 +152,37 @@ print("El factorial de "+str(num)+" es "+str(factorial))
 
 ### Punto 6 / Adivinanza de un número del 1 al 100
 ```py
+pregunta_1 : bool = 0
+adivinanza : int = 50
+limite_inferior: int = 1
+limite_superior: int = 100
 
+bandera : bool = True
+while bandera or pregunta_1 != 0: 
+  bandera = False
+  pregunta_1 = int(input("Es "+str(adivinanza)+" tu numero? SI = 0 , ES MAYOR = 1 y ES MENOR = 2: "))
+  if pregunta_1 == 1 and (limite_superior - limite_inferior) > 10:
+    limite_inferior = adivinanza
+    adivinanza += 9
+  elif pregunta_1 == 1 and (limite_superior - limite_inferior) < 10:
+    limite_inferior = adivinanza
+    adivinanza += 1
+  elif pregunta_1 == 2 and (limite_superior - limite_inferior) > 10:
+    limite_superior = adivinanza
+    adivinanza -= 8
+  elif pregunta_1 == 2 and (limite_superior - limite_inferior) < 10:
+    limite_superior = adivinanza
+    adivinanza -= 1
+
+print("Tu numero es el "+str(adivinanza))
 ```
-no lo pude hacer
+Lo que hice en este punto fue usar el tipo de ciclo *do while* el cual se puede crear usando una bandera (como esta en este código) o la palabra reservada *break*.
+
+Para resolver el problema primero definí 4 variables: la primera es la pregunta que se va a preguntar todo el rato, la cual es si el numero mencionado es el tuyo o es mayor o menor del cual se esta hablando, luego definí el valor inicial de la adivinanza el cual es 50, ya que era un punto medio entre el 1 y el 100, y por último definí dos variables las cuales me ayudaran a controlar el crecimiento o decrecimiento de la adivinanza, así pues si el numero se encuentra a un extremo del rango no tendre complicaciones en alcanzarlo.
+
+Una vez definidas esas cuatro variables empece a codificar el ciclo *do while* co una bandera y seguido de eso coloque la pregunta primordial para que funcione el ciclo. Luego definí que se hace dependiendo de que se elija en esa pregunta, y como se puede notar uso los limites, como antes mencione, para controlar el crecimiento y decrecimiento de la adivinanza.
+
+Y por último lo que hice fue colocar la instrucción para que aparezca el número elegido por el observador.
 
 ### Punto 7 / Divisores de un número del 2 al 50
 ```py
@@ -173,6 +201,35 @@ print("FIN")
 
 ### Punto 8 / Listado de números primos del 1 al 100
 ```py
+limite=int(input("Ingrese hasta el numero que quiera saber la cantidad de primos que hay: "))
+num:int=1
+div:int=2
+cont = 1 
 
+if num == 1:
+    num += 1
+    print(num) 
+
+elif num == 2:
+    num += 1
+
+while num < limite:
+    if num%div != 0:
+        if div < num-1:
+            div += 1
+
+        elif div == num-1:
+            div = 2
+            print(num)
+            num += 1
+            cont += 1
+
+    elif num%div == 0:
+        num += 1
+        div = 2
+
+print("Cantidad primos:"+str(cont))
 ```
-no lo pude hacer
+En este punto se habia especificado que se tenia que hacer con funciones, pero preferí hacerlo a mi manera y hacerlo de la manera tradicional de condiciones y operaciones matematicas; pero si es necesario lo que se puede hacer es cambiar el calculo de división por una función que represente lo mismo.
+
+Y como notas: el limite determina hasta que numero se va a analizar, la variable num y div son los que iran analizando los valores de todos los numeros enteros entre 1 y el limite, y por ultimo cont significa contador, que es el total de numeros primos que hay entre el 1 y el limite definido.
